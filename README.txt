@@ -1,25 +1,26 @@
-BURRITO RADAR — iPHONE WEB APP
+BURRITO RADAR — UPDATED IPHONE WEB APP (v2)
 
-WHAT THIS IS
-A small installable web app that searches OpenStreetMap for mapped restaurant/cafe/fast-food points within a 10-mile straight-line radius of an entered address, city, or ZIP code. It sorts by distance and links to directions and a web search for the menu.
+WHAT CHANGED
+- Faster, narrower OpenStreetMap query aimed at burrito/Mexican/taqueria candidates instead of downloading every nearby restaurant.
+- Recent result cache (15 minutes) and geocoding cache (7 days) to make repeat searches faster.
+- Request timeouts, clearer errors, and fallback to a second public map endpoint.
+- Deduplication and radius filtering remain in place.
+- Service-worker cache version bumped so GitHub Pages updates can replace stale files.
+- Search option changes no longer trigger a surprise search automatically.
+
+HOW TO UPDATE YOUR EXISTING GITHUB REPOSITORY
+1. Extract this ZIP on your computer.
+2. Open your existing GitHub repository (burrito-radar) and click Add file > Upload files.
+3. Upload/drag the files from this folder into the repository root. If prompted, confirm replacing the existing files. Keep index.html at the root.
+4. Commit changes to the main branch.
+5. Wait a minute or two for GitHub Pages to redeploy.
+6. On your iPhone, fully close Burrito Radar, then open the GitHub Pages URL in Safari and refresh. Launch the Home Screen icon again.
+7. If it still shows the old version, remove the Home Screen icon, open the URL in Safari, and add it to Home Screen again. You do not need to create a new repository.
 
 IMPORTANT LIMITATIONS
-- This is a deployable starter PWA, not an App Store app.
-- Search coverage depends on OpenStreetMap data and is not exhaustive.
-- It cannot verify that every listed place currently serves burritos, menu items, live opening status, or customer ratings. Always verify before travelling.
-- It uses public Nominatim and Overpass services. Their availability/rate limits can change. For a public app with many users, replace these with a suitable commercial API/backend and follow the providers' terms.
-- The scheduled weekly Burrito Radar scan in ChatGPT is separate from this app.
-
-EASIEST WAY TO PUT IT ON YOUR IPHONE (GitHub Pages)
-1. On a computer, sign in to GitHub and create a new public repository named burrito-radar.
-2. Upload all files in this folder to the repository root (index.html, app.js, styles.css, manifest.webmanifest, sw.js, icon.svg, README.txt).
-3. In the repository, open Settings > Pages.
-4. Under Build and deployment, select Deploy from a branch; choose main and /(root), then Save.
-5. Wait for GitHub Pages to publish the site. It will show a URL like https://YOUR-USERNAME.github.io/burrito-radar/ .
-6. Open that HTTPS URL in Safari on your iPhone.
-7. Tap Share (the square with the upward arrow) > Add to Home Screen. If offered, enable Open as Web App, then tap Add.
-8. Launch Burrito Radar from the new Home Screen icon.
-
-You can also host the files on another static HTTPS host. PWA installation/service workers require HTTPS (localhost is an exception).
-
-NO API KEY IS INCLUDED OR REQUIRED IN THIS PROTOTYPE.
+- This is an installable web app, not an App Store app.
+- Results depend on OpenStreetMap coverage and are not exhaustive; menu items, ratings, and open status are not guaranteed.
+- It uses public Nominatim and Overpass services. They can still be slow, rate-limited, or temporarily unavailable. This update reduces load and improves caching/fallbacks but cannot guarantee a response from public services.
+- Cache lasts 15 minutes for search results and 7 days for geocoding. A recent result cache can be slightly out of date.
+- For dependable speed and broader restaurant coverage, use a dedicated business-search API and a small backend that protects API credentials and respects provider terms.
+- The separate weekly ChatGPT Burrito Radar scan is not part of this app.

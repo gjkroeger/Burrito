@@ -29,10 +29,11 @@
       </div>
       <div class="controls">
         <div class="radius"><span>Search radius</span><strong>10 miles</strong></div>
-        <label class="check"><input type="checkbox" id="openNow"> Open now <span class="muted">(when hours are available)</span></label>
+        
         <label class="check"><input type="checkbox" id="includeNearby" checked> Include Mexican restaurants that may serve burritos</label>
       </div>
       <p id="status" role="status" aria-live="polite">Enter a location and tap “Find burritos.”</p>
+      <p class="muted">Recent searches may load from cache; public map data can still be delayed or incomplete.</p>
     </section>
     <section class="results-header">
       <div><h2>Nearby burrito spots</h2><p id="count">Results will appear here</p></div>
@@ -45,6 +46,6 @@
     <p class="disclaimer">Coverage depends on OpenStreetMap data. This tool can find mapped restaurants, but it cannot guarantee every burrito-serving business or confirm a full menu. Check the restaurant before traveling. Map data © OpenStreetMap contributors.</p>
   </main>
   <footer><span>🌯 Burrito Radar</span><span>10-mile radius · Any location</span></footer>
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
