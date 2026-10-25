@@ -1,0 +1,18 @@
+{
+  "name": "Burrito Radar",
+  "short_name": "Burrito Radar",
+  "description": "Find burrito spots within 10 miles of any location.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f6f1",
+  "theme_color": "#173d32",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
